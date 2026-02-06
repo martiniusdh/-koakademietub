@@ -621,20 +621,37 @@ const ModuleViewer: React.FC<{ module: Module, pathColor: string, onFinish: () =
                     <div className="text-lg text-slate-600 leading-relaxed whitespace-pre-wrap font-medium">
                       {page.content}
                     </div>
-                    {page.glossary && (
-                      <div className="mt-12 bg-logo-blue/5 p-8 rounded-[2.5rem] border border-logo-blue/10 shadow-inner">
-                        <h4 className="text-xl font-black text-slate-900 mb-6 flex items-center gap-3">
-                          <svg className="w-6 h-6 text-logo-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
-                          Begrepsliste
-                        </h4>
-                        <div className="grid gap-6">
-                          {page.glossary.map((item, idx) => (
-                            <div key={idx} className="flex flex-col sm:flex-row gap-2">
-                              <span className="font-black text-logo-blue sm:w-1/3 flex-shrink-0">{item.term}:</span>
-                              <span className="text-slate-600 font-medium">{item.definition}</span>
-                            </div>
-                          ))}
-                        </div>
+                    {page.glossary && page.glossary.length > 0 && (
+  <div className="mt-8 border-t border-slate-100 pt-8">
+    <details className="group bg-white border border-slate-200 rounded-3xl overflow-hidden transition-all duration-300 shadow-sm">
+      <summary className="flex items-center justify-between p-6 cursor-pointer list-none hover:bg-slate-50 transition-colors">
+        <div className="flex items-center gap-4">
+          <div className="w-10 h-10 rounded-xl bg-logo-blue/10 flex items-center justify-center text-logo-blue">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m3 21 1.9-1.9"/><path d="m3 7 1.9 1.9"/><path d="m14 21 2 2 2-2"/><path d="M9 15c.6 0 1 1 2 1s2-1 3-1 1 1 2 1"/><path d="M9 9c.6 0 1-1 2-1s2 1 3 1 1-1 2-1"/><path d="M2 9c.6 0 1-1 2-1s2 1 3 1 1-1 2-1"/><path d="M2 15c.6 0 1 1 2 1s2-1 3-1 1 1 2 1"/><path d="m18 3 2 2 2-2"/><path d="M2 3h20"/><path d="M2 21h10"/><path d="M10 3v18"/></svg>
+          </div>
+          <span className="font-bold text-slate-900 text-lg">Begrepsliste</span>
+        </div>
+        <div className="text-slate-400 transition-transform duration-300 group-open:rotate-180">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </div>
+      </summary>
+      <div className="px-6 pb-6 pt-2">
+        <div className="grid gap-4">
+          {page.glossary.map((item, idx) => (
+            <div key={idx} className="p-5 bg-slate-50 rounded-2xl border border-slate-100 hover:border-logo-blue/20 transition-colors">
+              <p className="font-black text-logo-blue text-xs uppercase tracking-widest mb-2">
+                {item.term}
+              </p>
+              <p className="text-slate-600 leading-relaxed font-medium">
+                {item.definition}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </details>
+  </div>
+)}
                       </div>
                     )}
                   </div>
