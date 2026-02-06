@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
-import { auth } from '../firebase'; // Pass på at banen til firebase.ts er riktig
-import { 
-  signInWithEmailAndPassword, 
-  createUserWithEmailAndPassword 
-} from 'firebase/auth';
+import { supabase } from '../supabase';
 
 interface LoginPageProps {
   onBack: () => void;
@@ -25,19 +21,27 @@ const LoginPage: React.FC<LoginPageProps> = ({ onBack, onLoginSuccess }) => {
 
     try {
       if (isRegistering) {
-        // Firebase Registrering
-        await createUserWithEmailAndPassword(auth, email, password);
-        alert("Bruker opprettet!");
+        // Supabase Registrering
+        const { error } = await supabase.auth.signUp({
+          email,
+          password,
+        });
+        if (error) throw error;
+        alert("Bruker opprettet! Sjekk e-posten din for bekreftelse.");
       } else {
-        // Firebase Innlogging
-        await signInWithEmailAndPassword(auth, email, password);
+        // Supabase Innlogging
+        const { error } = await supabase.auth.signInWithPassword({
+          email,
+          password,
+        });
+        if (error) throw error;
       }
       onLoginSuccess();
     } catch (err: any) {
-      if (err.code === 'auth/user-not-found') setError('Brukeren finnes ikke.');
-      else if (err.code === 'auth/wrong-password') setError('Feil passord.');
-      else if (err.code === 'auth/email-already-in-use') setError('E-posten er allerede i bruk.');
-      else setError('Noe gikk galt. Prøv igjen.');
+      if (err.message?.includes('Invalid login credentials')) setError('Feil e-post eller passord.');
+      else if (err.message?.includes('User already registered')) setError('E-posten er allerede i bruk.');
+      else if (err.message?.includes('Email not confirmed')) setError('Bekreft e-posten din før du logger inn.');
+      else setError(err.message || 'Noe gikk galt. Prøv igjen.');
     } finally {
       setLoading(false);
     }
@@ -65,8 +69,8 @@ const LoginPage: React.FC<LoginPageProps> = ({ onBack, onLoginSuccess }) => {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-slate-700 mb-1">E-post</label>
-            <input 
-              type="email" 
+            <input
+              type="email"
               className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-sky-500 outline-none transition-all"
               placeholder="din@epost.no"
               value={email}
@@ -77,8 +81,8 @@ const LoginPage: React.FC<LoginPageProps> = ({ onBack, onLoginSuccess }) => {
 
           <div>
             <label className="block text-sm font-medium text-slate-700 mb-1">Passord</label>
-            <input 
-              type="password" 
+            <input
+              type="password"
               className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-sky-500 outline-none transition-all"
               placeholder="••••••••"
               value={password}
@@ -87,12 +91,11 @@ const LoginPage: React.FC<LoginPageProps> = ({ onBack, onLoginSuccess }) => {
             />
           </div>
 
-          <button 
+          <button
             type="submit"
             disabled={loading}
-            className={`w-full py-4 rounded-xl font-bold text-white transition-all shadow-lg ${
-              loading ? 'bg-slate-400' : 'bg-slate-800 hover:bg-slate-700'
-            }`}
+            className={`w-full py-4 rounded-xl font-bold text-white transition-all shadow-lg ${loading ? 'bg-slate-400' : 'bg-slate-800 hover:bg-slate-700'
+              }`}
           >
             {loading ? 'Vennligst vent...' : (isRegistering ? 'Registrer deg' : 'Logg inn')}
           </button>
@@ -100,20 +103,20 @@ const LoginPage: React.FC<LoginPageProps> = ({ onBack, onLoginSuccess }) => {
 
         {/* Bytte-lenke under knappen */}
         <div className="text-center mt-6">
-          <p 
+          <p
             onClick={() => {
               setIsRegistering(!isRegistering);
               setError('');
             }}
             className="text-sm text-sky-500 hover:text-sky-600 font-medium cursor-pointer transition-colors"
           >
-            {isRegistering 
-              ? 'Har du allerede konto? Logg inn' 
+            {isRegistering
+              ? 'Har du allerede konto? Logg inn'
               : 'Ny her? Registrer deg'}
           </p>
         </div>
 
-        <button 
+        <button
           onClick={onBack}
           className="w-full mt-8 text-slate-400 text-sm hover:text-slate-600 transition-colors"
         >

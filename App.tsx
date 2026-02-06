@@ -25,7 +25,7 @@ const App: React.FC = () => {
     setView('home');
   };
 
-const navigateToLogin = () => {
+  const navigateToLogin = () => {
     window.scrollTo(0, 0);
     setView('login');
   };
@@ -44,7 +44,7 @@ const navigateToLogin = () => {
     window.scrollTo(0, 0);
     setView('packages');
   };
-  
+
   const handleContactClick = () => {
     if (view !== 'home') {
       setView('home');
@@ -66,9 +66,9 @@ const navigateToLogin = () => {
   if (view === 'dashboard' && isLoggedIn) {
     return (
       <div className="min-h-screen flex flex-col bg-slate-50">
-        <Navbar 
-          onLoginClick={handleLogout} 
-          onBrandClick={navigateToHome} 
+        <Navbar
+          onLoginClick={handleLogout}
+          onBrandClick={navigateToHome}
           onAboutClick={navigateToAbout}
           onContactClick={handleContactClick}
           onPackagesClick={navigateToPackages}
@@ -86,9 +86,9 @@ const navigateToLogin = () => {
   if (view === 'packages') {
     return (
       <div className="min-h-screen flex flex-col">
-        <Navbar 
-          onLoginClick={isLoggedIn ? handleLogout : navigateToLogin} 
-          onBrandClick={navigateToHome} 
+        <Navbar
+          onLoginClick={isLoggedIn ? handleLogout : navigateToLogin}
+          onBrandClick={navigateToHome}
           onAboutClick={navigateToAbout}
           onContactClick={handleContactClick}
           onPackagesClick={navigateToPackages}
@@ -106,9 +106,9 @@ const navigateToLogin = () => {
   if (view === 'about') {
     return (
       <div className="min-h-screen flex flex-col">
-        <Navbar 
-          onLoginClick={isLoggedIn ? handleLogout : navigateToLogin} 
-          onBrandClick={navigateToHome} 
+        <Navbar
+          onLoginClick={isLoggedIn ? handleLogout : navigateToLogin}
+          onBrandClick={navigateToHome}
           onAboutClick={navigateToAbout}
           onContactClick={handleContactClick}
           onPackagesClick={navigateToPackages}
@@ -125,15 +125,15 @@ const navigateToLogin = () => {
   // Hovedsiden
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar 
-        onLoginClick={navigateToLogin} 
-        onBrandClick={navigateToHome} 
+      <Navbar
+        onLoginClick={navigateToLogin}
+        onBrandClick={navigateToHome}
         onAboutClick={navigateToAbout}
         onContactClick={handleContactClick}
         onPackagesClick={navigateToPackages}
         isLoggedIn={isLoggedIn}
       />
-      
+
       <main className="flex-grow">
         <Hero />
         <section id="produkter">

@@ -69,7 +69,7 @@ const LEARNING_PATHS_DATA: Path[] = [
             title: 'Elias sin økonomiske berg-og-dal-bane',
             scenario: {
               text: 'Møt Elias(18). Han har nettopp fått sin første deltidsjobb. Hver måned bruker han alle pengene sine. Plutselig koster en uventet reparasjon på motorsykkelen hans 3000 kr, og Elias må låne penger av foreldrene. Det føles flaut og stressende.\n\nNeste måned bestemmer han seg for å spare 500 kr hver måned på en egen bufferkonto. Over 6 måneder har han 3000 kr. Når uhellet er ute neste gang, har Elias penger klare og et sikkerhetsnett som vil beskytte han mot slike uventede kostnader. Han føler seg voksen og har kontroll.',
-              imageUrl: 'modul1.1-bilde.png
+              imageUrl: 'modul1.1-bilde.png'
             }
           },
           {
