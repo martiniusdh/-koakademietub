@@ -621,13 +621,13 @@ const ModuleViewer: React.FC<{ module: Module, pathColor: string, onFinish: () =
                     <div className="text-lg text-slate-600 leading-relaxed whitespace-pre-wrap font-medium">
                       {page.content}
                     </div>
-  {page.glossary && page.glossary.length > 0 && (
+{page.glossary && page.glossary.length > 0 && (
   <div className="mt-8 border-t border-slate-100 pt-8">
     <details className="group bg-white border border-slate-200 rounded-3xl overflow-hidden transition-all duration-300 shadow-sm">
       <summary className="flex items-center justify-between p-6 cursor-pointer list-none hover:bg-slate-50 transition-colors">
         <div className="flex items-center gap-4">
           <div className="w-10 h-10 rounded-xl bg-logo-blue/10 flex items-center justify-center text-logo-blue">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m3 21 1.9-1.9"/><path d="m3 7 1.9 1.9"/><path d="m14 21 2 2 2-2"/><path d="M9 15c.6 0 1 1 2 1s2-1 3-1 1 1 2 1"/><path d="M9 9c.6 0 1-1 2-1s2 1 3 1 1-1 2-1"/><path d="M2 9c.6 0 1-1 2-1s2 1 3 1 1-1 2-1"/><path d="M2 15c.6 0 1 1 2 1s2-1 3-1 1 1 2 1"/><path d="m18 3 2 2 2-2"/><path d="M2 3h20"/><path d="M2 21h10"/><path d="M10 3v18"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
           </div>
           <span className="font-bold text-slate-900 text-lg">Begrepsliste</span>
         </div>
