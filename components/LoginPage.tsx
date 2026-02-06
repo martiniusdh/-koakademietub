@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { auth } from '../firebase'; // Pass på at banen til firebase.ts er riktig
 import { 
