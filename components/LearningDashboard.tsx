@@ -551,11 +551,6 @@ const ModuleViewer: React.FC<{ module: Module, pathColor: string, onFinish: () =
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentPage]);
-  
-  if (isLastPage) {
-      window.scrollTo(0, 0); // LEGG TIL DENNE LINJEN
-      onFinish();
-    } else {
 
   const page = module.pages[currentPage];
   const isLastPage = currentPage === module.pages.length - 1;
@@ -564,6 +559,7 @@ const ModuleViewer: React.FC<{ module: Module, pathColor: string, onFinish: () =
     if (page?.type === 'quiz' && !isAnswerCorrect) return;
     
     if (isLastPage) {
+      window.scrollTo(0, 0);
       onFinish();
     } else {
       setCurrentPage(prev => prev + 1);
