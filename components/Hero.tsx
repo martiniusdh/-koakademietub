@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Logo from './Logo.tsx';
+import forsideBilde from '../forside-bilde.png'
 
 const Hero: React.FC = () => {
   return (
@@ -37,11 +38,15 @@ const Hero: React.FC = () => {
               <div className="absolute -top-12 -left-12 w-96 h-96 bg-slate-100 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob"></div>
               <div className="absolute -bottom-16 -right-12 w-96 h-96 bg-slate-200 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob animation-delay-2000"></div>
               <div className="relative z-10 flex flex-col items-center">
-                <div className="bg-white p-6 sm:p-10 rounded-[4rem] shadow-[0_35px_60px_-15px_rgba(20,40,60,0.15)] ring-1 ring-slate-900/5 transition-all duration-700 hover:scale-[1.03] group">
-                  <div className="w-[320px] h-[320px] md:w-[520px] md:h-[520px] drop-shadow-[0_20px_20px_rgba(20,40,60,0.2)] group-hover:drop-shadow-[0_30px_30px_rgba(20,40,60,0.3)] transition-all duration-500">
-                    <Logo />
-                  </div>
-                </div>
+                <div className="bg-white p-6 sm:p-10 rounded-[4rem] shadow-[0_35px_60px_-15px_rgba(20,40,60,0.15)] ring-1 ring-slate-900/5 transition-all duration-700 hover:scale-[1.03]">
+  <div className="w-[320px] h-[320px] md:w-[520px] md:h-[520px] flex items-center justify-center overflow-hidden rounded-[3rem]">
+    <img 
+      src={forsideBilde} 
+      alt="Økonomiakademiet Forside" 
+      className="w-full h-full object-contain" 
+    />
+  </div>
+</div>
               </div>
             </div>
           </div>
