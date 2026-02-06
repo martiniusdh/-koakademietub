@@ -551,6 +551,7 @@ const ModuleViewer: React.FC<{ module: Module, pathColor: string, onFinish: () =
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentPage]);
+  
   if (isLastPage) {
       window.scrollTo(0, 0); // LEGG TIL DENNE LINJEN
       onFinish();
