@@ -1,5 +1,5 @@
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import Logo from './Logo.tsx';
 
 interface ModulePage {
@@ -547,6 +547,10 @@ const ModuleViewer: React.FC<{ module: Module, pathColor: string, onFinish: () =
   const [currentPage, setCurrentPage] = useState(0);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [isAnswerCorrect, setIsAnswerCorrect] = useState<boolean | null>(null);
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentPage]);
 
   const page = module.pages[currentPage];
   const isLastPage = currentPage === module.pages.length - 1;
