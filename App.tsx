@@ -25,10 +25,25 @@ const App: React.FC = () => {
     setView('home');
   };
 
-  const navigateToLogin = () => setView('login');
-  const navigateToHome = () => setView(isLoggedIn ? 'dashboard' : 'home');
-  const navigateToAbout = () => setView('about');
-  const navigateToPackages = () => setView('packages');
+const navigateToLogin = () => {
+    window.scrollTo(0, 0);
+    setView('login');
+  };
+
+  const navigateToHome = () => {
+    window.scrollTo(0, 0);
+    setView(isLoggedIn ? 'dashboard' : 'home');
+  };
+
+  const navigateToAbout = () => {
+    window.scrollTo(0, 0);
+    setView('about');
+  };
+
+  const navigateToPackages = () => {
+    window.scrollTo(0, 0);
+    setView('packages');
+  };
   
   const handleContactClick = () => {
     if (view !== 'home') {
