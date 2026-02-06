@@ -1,20 +1,18 @@
 import React from 'react';
-// Vi går ut av components-mappen (..) for å finne logo.png i hovedmappen
 import logoUrl from '../logo.png';
 
 export const Logo = () => {
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center">
       <img 
         src={logoUrl} 
-        alt="Logo" 
-        className="h-10 w-auto object-contain" 
+        alt="Økonomiakademiet Logo" 
+        className="h-16 w-auto object-contain" // h-16 gjør logoen mye større
+        style={{ minWidth: '150px' }} // Sikrer at den ikke blir borte
         onError={(e) => {
-          // Hvis bildet ikke finnes, vises denne teksten istedenfor et "knust" bilde-ikon
-          e.currentTarget.style.display = 'none';
+          console.error("Klarte ikke laste logo", e);
         }}
       />
-      <span className="font-bold text-xl text-slate-900">Økonomiakademiet UB</span>
     </div>
   );
 };
