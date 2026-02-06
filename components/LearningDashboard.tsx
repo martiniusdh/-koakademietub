@@ -621,7 +621,7 @@ const ModuleViewer: React.FC<{ module: Module, pathColor: string, onFinish: () =
                     <div className="text-lg text-slate-600 leading-relaxed whitespace-pre-wrap font-medium">
                       {page.content}
                     </div>
-                    {page.glossary && page.glossary.length > 0 && (
+  {page.glossary && page.glossary.length > 0 && (
   <div className="mt-8 border-t border-slate-100 pt-8">
     <details className="group bg-white border border-slate-200 rounded-3xl overflow-hidden transition-all duration-300 shadow-sm">
       <summary className="flex items-center justify-between p-6 cursor-pointer list-none hover:bg-slate-50 transition-colors">
