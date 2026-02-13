@@ -1000,23 +1000,7 @@ const LearningDashboard: React.FC = () => {
         </div>
       )}
 
-      <section className="mt-24 bg-slate-900 rounded-[4rem] p-10 md:p-16 text-white relative overflow-hidden shadow-[0_50px_100px_-20px_rgba(20,40,60,0.3)]">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-logo-blue/20 rounded-full blur-[120px] -mr-64 -mt-64"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-[100px] -ml-48 -mb-48"></div>
-        <div className="relative z-10 lg:flex lg:items-center lg:justify-between gap-16">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-4 mb-6">
-              <span className="bg-logo-blue/40 text-logo-blue px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-[0.2em] border border-logo-blue/50 backdrop-blur-md">Beta</span>
-              <h2 className="text-3xl md:text-4xl font-black leading-tight">Har du spørsmål om din egen økonomi?</h2>
-            </div>
-            <p className="text-xl text-slate-400 leading-relaxed font-medium">Vår AI-mentor er alltid tilgjengelig for å gi deg personlig veiledning om alt fra skatt og lån til budsjettstrategier mens du lærer.</p>
-          </div>
-          <button className="mt-12 lg:mt-0 px-12 py-6 bg-white text-slate-900 font-black rounded-2xl hover:bg-slate-50 transition-all whitespace-nowrap shadow-[0_20px_40px_-10px_rgba(255,255,255,0.2)] flex items-center gap-4 active:scale-95 group uppercase tracking-widest text-sm">
-            Start AI-Chat
-            <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-          </button>
-        </div>
-      </section>
+
     </div>
   );
 };
