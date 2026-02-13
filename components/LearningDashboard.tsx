@@ -1,7 +1,7 @@
 
 import React, { useState, useMemo, useEffect } from 'react';
 import Logo from './Logo.tsx';
-import bufferImg from '../modul1.1-bilde.png';
+
 
 interface ModulePage {
   type: 'video' | 'summary' | 'scenario' | 'quiz' | 'reflection';
@@ -53,12 +53,12 @@ const LEARNING_PATHS_DATA: Path[] = [
       </svg>
     ),
     modules: [
-      { 
-        id: '1.1', 
-        title: 'Modul 1.1 – Hvorfor spare penger?', 
+      {
+        id: '1.1',
+        title: 'Modul 1.1 – Hvorfor spare penger?',
         description: 'Grunnlaget for økonomisk frihet starter med bevisst sparing.',
         pages: [
-          { type: 'video' },
+          { type: 'video', videoUrl: 'https://www.youtube.com/watch?v=vSZ128qPb0c' },
           {
             type: 'summary',
             title: 'Hvorfor du bør spare penger – oppsummert',
@@ -69,7 +69,7 @@ const LEARNING_PATHS_DATA: Path[] = [
             title: 'Elias sin økonomiske berg-og-dal-bane',
             scenario: {
               text: 'Møt Elias(18). Han har nettopp fått sin første deltidsjobb. Hver måned bruker han alle pengene sine. Plutselig koster en uventet reparasjon på motorsykkelen hans 3000 kr, og Elias må låne penger av foreldrene. Det føles flaut og stressende.\n\nNeste måned bestemmer han seg for å spare 500 kr hver måned på en egen bufferkonto. Over 6 måneder har han 3000 kr. Når uhellet er ute neste gang, har Elias penger klare og et sikkerhetsnett som vil beskytte han mot slike uventede kostnader. Han føler seg voksen og har kontroll.',
-              imageUrl: 'modul1.1-bilde.png'
+
             }
           },
           {
@@ -107,12 +107,12 @@ const LEARNING_PATHS_DATA: Path[] = [
           }
         ]
       },
-      { 
-        id: '1.2', 
-        title: 'Modul 1.2: Forskjellen på sparekonto, BSU og andre spareformer', 
+      {
+        id: '1.2',
+        title: 'Modul 1.2: Forskjellen på sparekonto, BSU og andre spareformer',
         description: 'Finn den spareformen som gir best avkastning for din situation.',
         pages: [
-          { type: 'video' },
+          { type: 'video', videoUrl: 'https://www.youtube.com/watch?v=_F66834P2Xo' },
           {
             type: 'summary',
             title: 'Ulike spareformer forklart',
@@ -166,12 +166,12 @@ const LEARNING_PATHS_DATA: Path[] = [
           }
         ]
       },
-      { 
-        id: '1.3', 
-        title: 'Modul 1.3: Effekten av renters rente', 
-        description: 'Se hvordan små beløp vokser seg enorme over tid.', 
+      {
+        id: '1.3',
+        title: 'Modul 1.3: Effekten av renters rente',
+        description: 'Se hvordan små beløp vokser seg enorme over tid.',
         pages: [
-          { type: 'video' },
+          { type: 'video', videoUrl: 'https://youtu.be/yLYvoHYFgKM' },
           {
             type: 'summary',
             title: 'Hva er renters rente?',
@@ -224,7 +224,7 @@ const LEARNING_PATHS_DATA: Path[] = [
               'Hva er det første, minste beløpet du kan sette til side i dag for å starte "snøballen" din?'
             ]
           }
-        ] 
+        ]
       },
     ]
   },
@@ -241,12 +241,12 @@ const LEARNING_PATHS_DATA: Path[] = [
       </svg>
     ),
     modules: [
-      { 
-        id: '2.1', 
-        title: 'Modul 2.1: Grunnleggende om aksjer og fond', 
-        description: 'Hva er egentlig en aksje, og hvorfor bør du eie fond?', 
+      {
+        id: '2.1',
+        title: 'Modul 2.1: Grunnleggende om aksjer og fond',
+        description: 'Hva er egentlig en aksje, og hvorfor bør du eie fond?',
         pages: [
-          { type: 'video' },
+          { type: 'video', videoUrl: 'https://youtu.be/MoRmZjjqw4Q' },
           {
             type: 'summary',
             title: 'Aksjer vs Fond',
@@ -302,12 +302,12 @@ const LEARNING_PATHS_DATA: Path[] = [
           }
         ]
       },
-      { 
-        id: '2.2', 
-        title: 'Modul 2.2: Hva risiko betyr', 
-        description: 'Lær å balansere risiko og forventet avkastning.', 
+      {
+        id: '2.2',
+        title: 'Modul 2.2: Hva risiko betyr',
+        description: 'Lær å balansere risiko og forventet avkastning.',
         pages: [
-          { type: 'video' },
+          { type: 'video', videoUrl: 'https://youtu.be/LvtE1Kku2p0' },
           {
             type: 'summary',
             title: 'Hva er risiko?',
@@ -355,12 +355,12 @@ const LEARNING_PATHS_DATA: Path[] = [
           }
         ]
       },
-      { 
-        id: '2.3', 
-        title: 'Modul 2.3: Langsiktig investering kontra "kjapp gevinst"', 
-        description: 'Hvorfor tålmodighet er din beste venn i aksjemarkedet.', 
+      {
+        id: '2.3',
+        title: 'Modul 2.3: Langsiktig investering kontra "kjapp gevinst"',
+        description: 'Hvorfor tålmodighet er din beste venn i aksjemarkedet.',
         pages: [
-          { type: 'video' },
+          { type: 'video', videoUrl: 'https://youtu.be/XdLLKPa9_s8' },
           {
             type: 'summary',
             title: 'Langsiktig investering: Den lurere veien for de fleste',
@@ -420,12 +420,12 @@ const LEARNING_PATHS_DATA: Path[] = [
       </svg>
     ),
     modules: [
-      { 
-        id: '3.1', 
-        title: 'Modul 3.1: Hvordan sette opp et enkelt budsjett', 
-        description: 'Lag en plan for pengene dine før de forsvinner.', 
+      {
+        id: '3.1',
+        title: 'Modul 3.1: Hvordan sette opp et enkelt budsjett',
+        description: 'Lag en plan for pengene dine før de forsvinner.',
         pages: [
-          { type: 'video' },
+          { type: 'video', videoUrl: 'https://youtu.be/sLt0V9UOFHs' },
           {
             type: 'summary',
             title: 'Hva er et budsjett?',
@@ -481,12 +481,12 @@ const LEARNING_PATHS_DATA: Path[] = [
           }
         ]
       },
-      { 
-        id: '3.2', 
-        title: 'Modul 3.2: Hva man faktisk bruker penger på i hverdagen', 
-        description: 'Kartlegg småutgiftene som tømmer kontoen din.', 
+      {
+        id: '3.2',
+        title: 'Modul 3.2: Hva man faktisk bruker penger på i hverdagen',
+        description: 'Kartlegg småutgiftene som tømmer kontoen din.',
         pages: [
-          { type: 'video' },
+          { type: 'video', videoUrl: 'https://youtu.be/TFWTLYpcCOk' },
           {
             type: 'summary',
             title: 'Små utgifter blir store summer',
@@ -545,11 +545,20 @@ const LEARNING_PATHS_DATA: Path[] = [
   },
 ];
 
+
+const getYouTubeEmbedUrl = (url: string) => {
+  if (!url) return '';
+  // Handle standard youtube.com/watch?v=ID and youtu.be/ID
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+  const match = url.match(regExp);
+  return (match && match[2].length === 11) ? `https://www.youtube.com/embed/${match[2]}` : null;
+};
+
 const ModuleViewer: React.FC<{ module: Module, pathColor: string, onFinish: () => void, onExit: () => void }> = ({ module, pathColor, onFinish, onExit }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [isAnswerCorrect, setIsAnswerCorrect] = useState<boolean | null>(null);
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentPage]);
@@ -559,7 +568,7 @@ const ModuleViewer: React.FC<{ module: Module, pathColor: string, onFinish: () =
 
   const handleNext = () => {
     if (page?.type === 'quiz' && !isAnswerCorrect) return;
-    
+
     if (isLastPage) {
       window.scrollTo(0, 0);
       onFinish();
@@ -589,7 +598,7 @@ const ModuleViewer: React.FC<{ module: Module, pathColor: string, onFinish: () =
         </button>
       </div>
       <div className="w-full h-2 bg-slate-100">
-        <div 
+        <div
           className={`h-full ${pathColor} transition-all duration-500`}
           style={{ width: `${((currentPage + 1) / module.pages.length) * 100}%` }}
         ></div>
@@ -606,11 +615,22 @@ const ModuleViewer: React.FC<{ module: Module, pathColor: string, onFinish: () =
             {page.type === 'video' && (
               <div className="animate-in fade-in duration-700 flex flex-col items-center justify-center min-h-[45vh]">
                 <div className="w-full aspect-video bg-slate-900 rounded-[2.5rem] overflow-hidden shadow-2xl relative group border-4 border-slate-900">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-24 h-24 bg-white/10 backdrop-blur-xl rounded-full flex items-center justify-center text-white border border-white/20 group-hover:scale-110 transition-transform cursor-pointer">
-                      <svg className="w-12 h-12 translate-x-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  {page.videoUrl ? (
+                    <iframe
+                      className="w-full h-full"
+                      src={getYouTubeEmbedUrl(page.videoUrl) || page.videoUrl}
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-24 h-24 bg-white/10 backdrop-blur-xl rounded-full flex items-center justify-center text-white border border-white/20 group-hover:scale-110 transition-transform cursor-pointer">
+                        <svg className="w-12 h-12 translate-x-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               </div>
             )}
@@ -623,51 +643,51 @@ const ModuleViewer: React.FC<{ module: Module, pathColor: string, onFinish: () =
                     <div className="text-lg text-slate-600 leading-relaxed whitespace-pre-wrap font-medium">
                       {page.content}
                     </div>
-{page.glossary && page.glossary.length > 0 && (
-            <div className="mt-8 border-t border-slate-100 pt-8">
-              <details className="group bg-white border border-slate-200 rounded-3xl overflow-hidden transition-all duration-300 shadow-sm">
-                <summary className="flex items-center justify-between p-6 cursor-pointer list-none hover:bg-slate-50 transition-colors">
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-logo-blue/10 flex items-center justify-center text-logo-blue">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
-                    </div>
-                    <span className="font-bold text-slate-900 text-lg">Begrepsliste</span>
-                  </div>
-                  <div className="text-slate-400 transition-transform duration-300 group-open:rotate-180">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-                  </div>
-                </summary>
-                <div className="px-6 pb-6 pt-2">
-                  <div className="grid gap-4">
-                    {page.glossary.map((item, idx) => (
-                      <div key={idx} className="p-5 bg-slate-50 rounded-2xl border border-slate-100 hover:border-logo-blue/20 transition-colors">
-                        <p className="font-black text-logo-blue text-xs uppercase tracking-widest mb-2">
-                          {item.term}
-                        </p>
-                        <p className="text-slate-600 leading-relaxed font-medium">
-                          {item.definition}
-                        </p>
+                    {page.glossary && page.glossary.length > 0 && (
+                      <div className="mt-8 border-t border-slate-100 pt-8">
+                        <details className="group bg-white border border-slate-200 rounded-3xl overflow-hidden transition-all duration-300 shadow-sm">
+                          <summary className="flex items-center justify-between p-6 cursor-pointer list-none hover:bg-slate-50 transition-colors">
+                            <div className="flex items-center gap-4">
+                              <div className="w-10 h-10 rounded-xl bg-logo-blue/10 flex items-center justify-center text-logo-blue">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" /><path d="M12 17h.01" /></svg>
+                              </div>
+                              <span className="font-bold text-slate-900 text-lg">Begrepsliste</span>
+                            </div>
+                            <div className="text-slate-400 transition-transform duration-300 group-open:rotate-180">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6" /></svg>
+                            </div>
+                          </summary>
+                          <div className="px-6 pb-6 pt-2">
+                            <div className="grid gap-4">
+                              {page.glossary.map((item, idx) => (
+                                <div key={idx} className="p-5 bg-slate-50 rounded-2xl border border-slate-100 hover:border-logo-blue/20 transition-colors">
+                                  <p className="font-black text-logo-blue text-xs uppercase tracking-widest mb-2">
+                                    {item.term}
+                                  </p>
+                                  <p className="text-slate-600 leading-relaxed font-medium">
+                                    {item.definition}
+                                  </p>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </details>
                       </div>
-                    ))}
+                    )}
                   </div>
-                </div>
-              </details>
-            </div>
-          )}
-        </div>
                   <div className="md:col-span-2 bg-slate-50 p-8 rounded-[2.5rem] border border-slate-100 shadow-inner flex flex-col items-center justify-center text-center h-fit sticky top-0">
                     <div className="w-24 h-24 mb-6 opacity-40"><Logo /></div>
                     <h4 className="font-black text-slate-900 text-lg mb-3">Viktig poeng</h4>
                     <p className="text-slate-500 italic leading-relaxed">
-                      {module.id === '2.3' 
-                        ? '"Tålmodighet er ikke bare en dyd, det er en investeringsstrategi."' 
-                        : (module.id === '3.1' 
-                            ? '"Et budsjett er ikke en begrensning, det er en tillatelse til å bruke penger på det som faktisk betyr noe for deg."'
-                            : (module.id === '3.2'
-                                ? '"Små bekker gjør en stor å. Ved å fjerne de unødvendige småutgiftene, bygger du raskt kapital til det du virkelig ønsker deg."'
-                                : (module.id === '1.3' ? '"Tid i markedet slår timing av markedet."' : '"Sparing handler om å beholde penger."')
-                              )
+                      {module.id === '2.3'
+                        ? '"Tålmodighet er ikke bare en dyd, det er en investeringsstrategi."'
+                        : (module.id === '3.1'
+                          ? '"Et budsjett er ikke en begrensning, det er en tillatelse til å bruke penger på det som faktisk betyr noe for deg."'
+                          : (module.id === '3.2'
+                            ? '"Små bekker gjør en stor å. Ved å fjerne de unødvendige småutgiftene, bygger du raskt kapital til det du virkelig ønsker deg."'
+                            : (module.id === '1.3' ? '"Tid i markedet slår timing av markedet."' : '"Sparing handler om å beholde penger."')
                           )
+                        )
                       }
                     </p>
                   </div>
@@ -699,18 +719,18 @@ const ModuleViewer: React.FC<{ module: Module, pathColor: string, onFinish: () =
                   <span className={`inline-block px-5 py-2 rounded-full ${pathColor} text-white text-[10px] font-black uppercase tracking-[0.2em] mb-6 shadow-xl`}>Quiz-oppgave</span>
                   <h3 className="text-3xl font-black text-slate-900 leading-tight">{page.quiz?.question}</h3>
                 </div>
-                
+
                 <div className="space-y-4">
                   {page.quiz?.options.map((option, idx) => (
-                    <button 
+                    <button
                       key={idx}
                       onClick={() => handleQuizSubmit(idx)}
                       disabled={isAnswerCorrect === true}
                       className={`w-full p-6 text-left rounded-3xl border-2 transition-all flex items-center justify-between group relative overflow-hidden
-                        ${selectedOption === idx 
-                          ? (idx === page.quiz?.correctIndex 
-                              ? 'bg-emerald-50 border-emerald-500 shadow-lg shadow-emerald-100' 
-                              : 'bg-rose-50 border-rose-500 shadow-lg shadow-rose-100 animate-shake') 
+                        ${selectedOption === idx
+                          ? (idx === page.quiz?.correctIndex
+                            ? 'bg-emerald-50 border-emerald-500 shadow-lg shadow-emerald-100'
+                            : 'bg-rose-50 border-rose-500 shadow-lg shadow-rose-100 animate-shake')
                           : 'bg-white border-slate-100 hover:border-logo-blue hover:shadow-md shadow-sm'}`}
                     >
                       <span className={`text-lg font-bold pr-8 ${selectedOption === idx ? (idx === page.quiz?.correctIndex ? 'text-emerald-700' : 'text-rose-700') : 'text-slate-700 group-hover:text-logo-blue transition-colors'}`}>
@@ -747,21 +767,21 @@ const ModuleViewer: React.FC<{ module: Module, pathColor: string, onFinish: () =
                 <div className="grid gap-8">
                   {page.reflectionQuestions?.map((q, idx) => (
                     <div key={idx} className="bg-slate-50/50 p-10 rounded-[2.5rem] border border-slate-100 shadow-xl">
-                       <p className="text-xl font-black text-slate-900 mb-6">{q}</p>
-                       <textarea 
-                         className="w-full bg-white border border-slate-200 rounded-[1.5rem] p-6 text-slate-700 focus:ring-4 focus:ring-logo-blue/10 focus:border-logo-blue focus:outline-none shadow-inner transition-all text-lg"
-                         placeholder="Ditt svar..."
-                         rows={3}
-                       ></textarea>
+                      <p className="text-xl font-black text-slate-900 mb-6">{q}</p>
+                      <textarea
+                        className="w-full bg-white border border-slate-200 rounded-[1.5rem] p-6 text-slate-700 focus:ring-4 focus:ring-logo-blue/10 focus:border-logo-blue focus:outline-none shadow-inner transition-all text-lg"
+                        placeholder="Ditt svar..."
+                        rows={3}
+                      ></textarea>
                     </div>
                   ))}
                 </div>
                 <div className="flex flex-col items-center py-12 text-center">
-                   <div className="w-24 h-24 text-logo-blue mb-6 drop-shadow-2xl animate-pulse">
-                      <Logo />
-                   </div>
-                   <h4 className="text-3xl font-black text-slate-900 mb-2">Modul fullført!</h4>
-                   <p className="text-xl text-slate-500 font-medium">Du har nå fullført denne modulen. Godt jobbet!</p>
+                  <div className="w-24 h-24 text-logo-blue mb-6 drop-shadow-2xl animate-pulse">
+                    <Logo />
+                  </div>
+                  <h4 className="text-3xl font-black text-slate-900 mb-2">Modul fullført!</h4>
+                  <p className="text-xl text-slate-500 font-medium">Du har nå fullført denne modulen. Godt jobbet!</p>
                 </div>
               </div>
             )}
@@ -770,7 +790,7 @@ const ModuleViewer: React.FC<{ module: Module, pathColor: string, onFinish: () =
       </div>
 
       <div className="p-8 border-t border-slate-100 bg-slate-50/50 flex justify-between items-center px-12">
-        <button 
+        <button
           onClick={() => setCurrentPage(p => Math.max(0, p - 1))}
           disabled={currentPage === 0}
           className="px-8 py-4 font-black text-slate-400 hover:text-slate-900 disabled:opacity-0 transition-all flex items-center gap-2 uppercase tracking-widest text-xs"
@@ -778,7 +798,7 @@ const ModuleViewer: React.FC<{ module: Module, pathColor: string, onFinish: () =
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15 19l-7-7 7-7" /></svg>
           Tilbake
         </button>
-        <button 
+        <button
           onClick={handleNext}
           disabled={page?.type === 'quiz' && isAnswerCorrect !== true}
           className={`px-12 py-5 rounded-[1.5rem] font-black text-white ${pathColor} shadow-2xl shadow-current/30 hover:brightness-95 hover:scale-105 transition-all active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed flex items-center gap-4 uppercase tracking-widest text-sm`}
@@ -814,7 +834,7 @@ const LearningDashboard: React.FC = () => {
   };
 
   const handleModuleExit = () => setActiveModuleId(null);
-  
+
   const handleModuleFinish = (moduleId: string) => {
     setCompletedModules(prev => {
       const next = new Set(prev);
@@ -827,9 +847,9 @@ const LearningDashboard: React.FC = () => {
   if (activeModule && selectedPath) {
     return (
       <div className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto min-h-[80vh]">
-        <ModuleViewer 
-          module={activeModule} 
-          pathColor={selectedPath.color} 
+        <ModuleViewer
+          module={activeModule}
+          pathColor={selectedPath.color}
           onFinish={() => handleModuleFinish(activeModule.id)}
           onExit={handleModuleExit}
         />
@@ -848,8 +868,8 @@ const LearningDashboard: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {paths.map((path, idx) => (
-              <div 
-                key={path.id} 
+              <div
+                key={path.id}
                 className="bg-white rounded-[3rem] shadow-2xl shadow-slate-200/50 border border-slate-100 overflow-hidden flex flex-col group hover:scale-[1.02] transition-all animate-in fade-in slide-in-from-bottom-8 duration-500"
                 style={{ animationDelay: `${idx * 100}ms` }}
               >
@@ -860,22 +880,22 @@ const LearningDashboard: React.FC = () => {
                   </div>
                   <h3 className="text-3xl font-black text-slate-900 mb-5">{path.title}</h3>
                   <p className="text-lg text-slate-500 leading-relaxed mb-10 font-medium">{path.description}</p>
-                  
+
                   <div className="mb-8">
                     <div className="flex justify-between text-xs font-black text-slate-400 mb-3 uppercase tracking-[0.2em]">
                       <span>Din fremdrift</span>
                       <span>{path.progress}%</span>
                     </div>
                     <div className="w-full h-4 bg-slate-50 rounded-full overflow-hidden border border-slate-100 p-1">
-                      <div 
-                        className={`h-full ${path.color} rounded-full transition-all duration-1000 shadow-inner`} 
+                      <div
+                        className={`h-full ${path.color} rounded-full transition-all duration-1000 shadow-inner`}
                         style={{ width: `${path.progress}%` }}
                       ></div>
                     </div>
                   </div>
                 </div>
                 <div className="p-10 pt-0 mt-auto">
-                  <button 
+                  <button
                     onClick={() => setSelectedPathId(path.id)}
                     className={`w-full py-5 rounded-2xl font-black text-white ${path.color} hover:brightness-95 transition-all shadow-xl shadow-current/10 active:scale-95 uppercase tracking-widest text-sm`}
                   >
@@ -888,7 +908,7 @@ const LearningDashboard: React.FC = () => {
         </>
       ) : (
         <div className="animate-in fade-in slide-in-from-left-4 duration-500">
-          <button 
+          <button
             onClick={handleBack}
             className="flex items-center gap-3 text-slate-400 hover:text-slate-900 font-black mb-10 transition-colors group uppercase tracking-[0.2em] text-xs"
           >
@@ -925,21 +945,21 @@ const LearningDashboard: React.FC = () => {
                 {selectedPath.modules.map((module, idx) => {
                   const isCompleted = completedModules.has(module.id);
                   return (
-                    <button 
+                    <button
                       key={module.id}
                       onClick={() => setActiveModuleId(module.id)}
                       className={`w-full text-left p-8 rounded-[2.5rem] border transition-all group flex items-center justify-between relative overflow-hidden
-                        ${isCompleted 
-                          ? 'bg-emerald-50/50 border-emerald-100 shadow-sm' 
+                        ${isCompleted
+                          ? 'bg-emerald-50/50 border-emerald-100 shadow-sm'
                           : 'bg-white border-slate-100 shadow-sm hover:shadow-2xl hover:border-slate-300'}`}
                     >
                       <div className="absolute top-0 right-0 p-4 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity">
-                         <Logo className="w-24 h-24" />
+                        <Logo className="w-24 h-24" />
                       </div>
                       <div className="flex gap-8 items-center relative z-10">
                         <div className={`w-16 h-16 rounded-2xl font-black text-xl flex items-center justify-center border transition-colors shadow-sm
-                          ${isCompleted 
-                            ? 'bg-emerald-500 text-white border-emerald-400' 
+                          ${isCompleted
+                            ? 'bg-emerald-500 text-white border-emerald-400'
                             : `${selectedPath.lightColor} text-slate-900 border-slate-200 group-hover:bg-white`}`}>
                           {isCompleted ? (
                             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
@@ -963,8 +983,8 @@ const LearningDashboard: React.FC = () => {
                       </div>
                       <div className="hidden sm:block relative z-10">
                         <div className={`p-3 rounded-full transition-all shadow-sm
-                          ${isCompleted 
-                            ? 'bg-emerald-500 text-white' 
+                          ${isCompleted
+                            ? 'bg-emerald-500 text-white'
                             : 'bg-slate-50 text-slate-300 group-hover:bg-logo-blue group-hover:text-white'}`}>
                           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
