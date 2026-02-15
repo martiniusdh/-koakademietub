@@ -863,7 +863,7 @@ const LearningDashboard: React.FC = () => {
         <>
           <header className="mb-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
             <h1 className="text-4xl font-black text-slate-900 sm:text-5xl tracking-tight">Velkommen til ditt akademi</h1>
-            <p className="mt-4 text-xl text-slate-600 font-medium">Velg en læringssti for å starte din reise mot økonomisk frihet.</p>
+            <p className="mt-4 text-xl text-slate-600 font-medium">Velg en læringssti for å starte din reise mot økonomisk kunnskap.</p>
           </header>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
