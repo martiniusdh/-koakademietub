@@ -1,24 +1,24 @@
-
 import React from 'react';
 import Logo from './Logo.tsx';
+import aboutImageUrl from '../om-oss-bilde.png';
 
 interface AboutPageProps {
   onRegisterClick: () => void;
 }
 
 const TEAM = [
-  { 
-    name: 'Lucas Nevermo Steiro', 
+  {
+    name: 'Lucas Nevermo Steiro',
     role: 'Daglig Leder',
     bio: 'Lucas leder strategien og sørger for at våre pedagogiske mål nås med høyeste kvalitet.'
   },
-  { 
-    name: 'Martinius Dimmen-Hansen', 
+  {
+    name: 'Martinius Dimmen-Hansen',
     role: 'Økonomi- og HR-ansvarlig',
     bio: 'Martinius har ansvaret for bedriftens økonomiske bærekraft og teamets trivsel.'
   },
-  { 
-    name: 'Jonas Hole Sletten', 
+  {
+    name: 'Jonas Hole Sletten',
     role: 'Produkt- og markedsansvarlig',
     bio: 'Jonas utvikler våre interaktive læringsstier og leder vår digitale tilstedeværelse.'
   },
@@ -41,7 +41,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onRegisterClick }) => {
             </svg>
           </div>
         </div>
-        
+
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-6xl">Vår Visjon</h1>
@@ -88,10 +88,12 @@ const AboutPage: React.FC<AboutPageProps> = ({ onRegisterClick }) => {
             </div>
             <div className="relative lg:col-span-1">
               <div className="aspect-[4/3] rounded-3xl bg-slate-100 overflow-hidden shadow-2xl border-8 border-white ring-1 ring-slate-200 flex items-center justify-center">
-                 <div className="w-1/2 opacity-20 grayscale">
-                    <Logo />
-                 </div>
-                 <div className="absolute inset-0 bg-gradient-to-tr from-logo-blue/10 to-transparent"></div>
+                <img
+                  src={aboutImageUrl}
+                  alt="Om oss bilde"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-logo-blue/10 to-transparent pointer-events-none"></div>
               </div>
             </div>
           </div>
@@ -113,9 +115,9 @@ const AboutPage: React.FC<AboutPageProps> = ({ onRegisterClick }) => {
                 <div className="relative w-full aspect-square rounded-3xl bg-white shadow-xl overflow-hidden mb-8 border border-slate-100 group">
                   <div className="absolute inset-0 bg-slate-900/5 transition-opacity group-hover:opacity-0"></div>
                   <div className="absolute inset-0 flex items-center justify-center">
-                     <div className="w-24 h-24 text-slate-200">
-                        <Logo />
-                     </div>
+                    <div className="w-24 h-24 text-slate-200">
+                      <Logo />
+                    </div>
                   </div>
                 </div>
                 <h3 className="text-xl font-bold leading-7 tracking-tight text-slate-900">{person.name}</h3>
@@ -137,9 +139,9 @@ const AboutPage: React.FC<AboutPageProps> = ({ onRegisterClick }) => {
             <p className="mx-auto mt-6 max-w-xl text-center text-lg leading-8 text-slate-200">
               Registrer deg nå og få eksklusiv tilgang til vår prototype.
             </p>
-            
+
             <div className="mt-10 flex justify-center">
-              <button 
+              <button
                 onClick={onRegisterClick}
                 className="rounded-2xl bg-white px-10 py-5 text-lg font-bold text-logo-blue shadow-xl hover:bg-slate-50 transition-all hover:scale-105 active:scale-95 flex items-center gap-3"
               >
