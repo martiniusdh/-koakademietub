@@ -27,10 +27,10 @@ const Products: React.FC<ProductsProps> = ({ hasAccess, onUnlock }) => {
                 </span>
               </div>
               <p className="mt-4 text-sm leading-6 text-slate-600">Den komplette pakken for deg som vil lære sparing og budsjett på en moderne måte.</p>
-              
+
               <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-slate-600">
                 {[
-                  'Nyhet: Integrert AI mentor',
+                  'Læring gjort enkelt',
                   'Læringssti: Sparing og renter',
                   'Læringssti: Investering og aksjer',
                   'Læringssti: Budsjett og pengebruk',
@@ -41,12 +41,12 @@ const Products: React.FC<ProductsProps> = ({ hasAccess, onUnlock }) => {
                     <svg className="h-6 w-5 flex-none text-logo-blue mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M16.704 4.176a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
                     </svg>
-                    <span className={feature.startsWith('Nyhet') ? 'font-bold text-logo-blue' : ''}>{feature}</span>
+                    <span className={feature === 'Læring gjort enkelt' ? 'font-bold text-logo-blue' : ''}>{feature}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <button 
+            <button
               onClick={onUnlock}
               className="mt-8 block w-full rounded-xl bg-logo-blue px-3 py-4 text-center text-sm font-bold text-white shadow-lg hover:bg-logo-blue-dark transition-all active:scale-95"
             >
