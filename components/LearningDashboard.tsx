@@ -699,15 +699,8 @@ const ModuleViewer: React.FC<{ module: Module, pathColor: string, onFinish: () =
               <div className="space-y-8 animate-in fade-in zoom-in-95 duration-500">
                 <h3 className="text-3xl font-black text-slate-900">{page.title}</h3>
                 <div className="bg-slate-50/50 p-10 rounded-[3rem] border border-slate-100 shadow-xl">
-                  <div className="flex flex-col md:flex-row gap-12 items-start">
-                    <div className="w-full md:w-56 h-56 rounded-[2rem] bg-white shadow-lg flex items-center justify-center border-4 border-white flex-shrink-0 relative overflow-hidden group">
-                      <div className="absolute inset-0 bg-logo-blue/5 group-hover:bg-transparent transition-colors"></div>
-                      <svg className="w-32 h-32 text-slate-200" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" /></svg>
-                      <div className="absolute bottom-4 bg-white/80 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-slate-400">Illustrasjon</div>
-                    </div>
-                    <div className="text-xl text-slate-700 leading-relaxed whitespace-pre-wrap font-medium italic">
-                      {page.scenario?.text}
-                    </div>
+                  <div className="text-xl text-slate-700 leading-relaxed whitespace-pre-wrap font-medium italic">
+                    {page.scenario?.text}
                   </div>
                 </div>
               </div>
