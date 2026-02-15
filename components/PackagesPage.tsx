@@ -23,7 +23,7 @@ const PackagesPage: React.FC<PackagesPageProps> = ({ onUnlock }) => {
             </svg>
           </div>
         </div>
-        
+
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-6xl">Læringspakker</h1>
@@ -43,10 +43,10 @@ const PackagesPage: React.FC<PackagesPageProps> = ({ onUnlock }) => {
               <p className="text-xl text-slate-600 leading-relaxed font-medium">
                 Vår plattform er mer enn bare tekst og video. Det er et interaktivt økosystem der du lærer ved å gjøre, støttet av markedsledende AI-teknologi.
               </p>
-              
+
               <div className="grid gap-6">
                 {[
-                  { title: 'AI-Mentor', desc: 'Få svar på dine spørsmål 24/7 med vår spesialtrente mentor.' },
+                  { title: 'Enkel læring', desc: 'Læring gjort enkelt' },
                   { title: 'Interaktive Stier', desc: 'Gå gjennom moduler med quizer og realistiske scenarioer.' },
                   { title: 'Fremdriftsmåling', desc: 'Se nøyaktig hvor mye du har lært og hva som gjenstår.' }
                 ].map((item, i) => (
@@ -66,7 +66,7 @@ const PackagesPage: React.FC<PackagesPageProps> = ({ onUnlock }) => {
             <div className="lg:w-1/2 flex justify-center">
               <div className="relative group w-full max-w-md">
                 <div className="absolute -inset-4 bg-logo-blue/10 rounded-[4rem] blur-3xl group-hover:bg-logo-blue/20 transition-all"></div>
-                
+
                 <div className="relative flex flex-col justify-between rounded-[3rem] p-10 ring-1 ring-logo-blue bg-white shadow-2xl border-4 border-logo-blue transform group-hover:scale-[1.02] transition-all duration-500">
                   <div>
                     <div className="flex items-center justify-between gap-x-4">
@@ -76,10 +76,10 @@ const PackagesPage: React.FC<PackagesPageProps> = ({ onUnlock }) => {
                       </span>
                     </div>
                     <p className="mt-4 text-lg leading-7 text-slate-600 font-medium italic">Den komplette pakken for deg som vil lære sparing og budsjett på en moderne måte.</p>
-                    
+
                     <ul role="list" className="mt-10 space-y-4 text-base leading-7 text-slate-600">
                       {[
-                        'Nyhet: Integrert AI mentor',
+                        'Enkel læring',
                         'Læringssti: Sparing og renter',
                         'Læringssti: Investering og aksjer',
                         'Læringssti: Budsjett og pengebruk',
@@ -97,9 +97,9 @@ const PackagesPage: React.FC<PackagesPageProps> = ({ onUnlock }) => {
                       ))}
                     </ul>
                   </div>
-                  
+
                   <div className="mt-12 space-y-4">
-                    <button 
+                    <button
                       onClick={onUnlock}
                       className="w-full py-5 rounded-2xl bg-logo-blue text-white text-lg font-black shadow-xl shadow-logo-blue/20 hover:bg-logo-blue-dark transition-all active:scale-95 uppercase tracking-widest"
                     >
@@ -118,13 +118,13 @@ const PackagesPage: React.FC<PackagesPageProps> = ({ onUnlock }) => {
       <div className="bg-slate-50 py-24 sm:py-32 border-t border-slate-100">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <div className="flex flex-col items-center">
-             <div className="w-24 h-24 mb-8 opacity-20 grayscale">
-                <Logo />
-             </div>
-             <h3 className="text-3xl font-black text-slate-900 mb-6 tracking-tight">En del av Ungt Entreprenørskap</h3>
-             <p className="max-w-2xl mx-auto text-lg text-slate-600 font-medium">
-               Vårt læringsinnhold er kvalitetssikret og utviklet av elever ved Akademiet Ypsilon VGS for å sikre relevans og engasjement for målgruppen.
-             </p>
+            <div className="w-24 h-24 mb-8 opacity-20 grayscale">
+              <Logo />
+            </div>
+            <h3 className="text-3xl font-black text-slate-900 mb-6 tracking-tight">En del av Ungt Entreprenørskap</h3>
+            <p className="max-w-2xl mx-auto text-lg text-slate-600 font-medium">
+              Vårt læringsinnhold er kvalitetssikret og utviklet av elever ved Akademiet Ypsilon VGS for å sikre relevans og engasjement for målgruppen.
+            </p>
           </div>
         </div>
       </div>
