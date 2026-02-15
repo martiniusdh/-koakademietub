@@ -10,10 +10,6 @@ const Hero: React.FC = () => {
         <div className="lg:flex lg:items-center lg:gap-x-16">
           <div className="max-w-2xl lg:mx-0 lg:flex-auto">
             <div className="flex flex-col sm:flex-row gap-3 mb-8">
-              <div className="inline-flex items-center space-x-2 rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-logo-blue ring-1 ring-inset ring-slate-200 w-fit">
-                <span>Nyhet:</span>
-                <span className="font-bold text-logo-blue">AI-Mentor lansert!</span>
-              </div>
               <div className="inline-flex items-center space-x-2 rounded-full bg-slate-50 px-3 py-1 text-sm font-medium text-slate-700 ring-1 ring-inset ring-slate-700/10 w-fit">
                 <span>Prototype lanseres våren 2026</span>
               </div>
@@ -22,7 +18,7 @@ const Hero: React.FC = () => {
               Få kontroll på din <span className="text-logo-blue italic">privatøkonomi</span>
             </h1>
             <p className="mt-8 text-xl leading-relaxed text-slate-600">
-              Vi gjør økonomi forståelig og enkelt slik at alle kan lære det. Vår plattform kombinerer interaktive læringsstier med vår helt nye AI-mentor spesialtrent for ungdom.
+              Vi gjør økonomi forståelig og enkelt slik at alle kan lære det. Vi tilbyr interaktive læringsstier spesialdesignet for ungdom, som gjør læringen engasjerende og effektiv.
             </p>
             <div className="mt-12 flex flex-wrap items-center gap-6">
               <a href="#produkter" className="rounded-xl bg-logo-blue px-8 py-4 text-lg font-bold text-white shadow-xl hover:bg-logo-blue-dark hover:-translate-y-1 transition-all duration-200">
@@ -39,14 +35,14 @@ const Hero: React.FC = () => {
               <div className="absolute -bottom-16 -right-12 w-96 h-96 bg-slate-200 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob animation-delay-2000"></div>
               <div className="relative z-10 flex flex-col items-center">
                 <div className="bg-white p-6 sm:p-10 rounded-[4rem] shadow-[0_35px_60px_-15px_rgba(20,40,60,0.15)] ring-1 ring-slate-900/5 transition-all duration-700 hover:scale-[1.03]">
-  <div className="w-[320px] h-[320px] md:w-[520px] md:h-[520px] flex items-center justify-center overflow-hidden rounded-[3rem]">
-    <img 
-      src={forsideBilde} 
-      alt="Økonomiakademiet Forside" 
-      className="w-full h-full object-contain" 
-    />
-  </div>
-</div>
+                  <div className="w-[320px] h-[320px] md:w-[520px] md:h-[520px] flex items-center justify-center overflow-hidden rounded-[3rem]">
+                    <img
+                      src={forsideBilde}
+                      alt="Økonomiakademiet Forside"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
