@@ -27,7 +27,6 @@ const LoginPage: React.FC<LoginPageProps> = ({ onBack, onLoginSuccess }) => {
           password,
         });
         if (error) throw error;
-        alert("Bruker opprettet! Sjekk e-posten din for bekreftelse.");
       } else {
         // Supabase Innlogging
         const { error } = await supabase.auth.signInWithPassword({
