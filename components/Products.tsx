@@ -14,7 +14,7 @@ const Products: React.FC<ProductsProps> = ({ hasAccess, onUnlock }) => {
           <h2 className="text-base font-bold text-logo-blue uppercase tracking-widest">Vårt Tilbud</h2>
           <p className="mt-2 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">Prototype-pakke</p>
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            Dette er vår eksklusive lanseringspakke. Den gir deg alt du trenger for å ta kontroll over din egen økonomiske fremtid.
+            Dette er vår eksklusive lanseringspakke. Den gir deg alt du trenger for din reise mot økonomisk kunnskap.
           </p>
         </div>
         <div className="mx-auto mt-16 flex justify-center">
