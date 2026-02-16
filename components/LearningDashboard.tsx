@@ -1,6 +1,7 @@
 
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useCallback, useRef } from 'react';
 import Logo from './Logo.tsx';
+import { supabase } from '../supabase';
 
 
 interface ModulePage {
@@ -554,7 +555,7 @@ const getYouTubeEmbedUrl = (url: string) => {
   return (match && match[2].length === 11) ? `https://www.youtube.com/embed/${match[2]}` : null;
 };
 
-const ModuleViewer: React.FC<{ module: Module, pathColor: string, onFinish: () => void, onExit: () => void }> = ({ module, pathColor, onFinish, onExit }) => {
+const ModuleViewer: React.FC<{ module: Module, pathColor: string, onFinish: () => void, onExit: () => void, reflectionAnswers: Record<string, string>, onReflectionChange: (key: string, value: string) => void }> = ({ module, pathColor, onFinish, onExit, reflectionAnswers, onReflectionChange }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [isAnswerCorrect, setIsAnswerCorrect] = useState<boolean | null>(null);
@@ -765,6 +766,8 @@ const ModuleViewer: React.FC<{ module: Module, pathColor: string, onFinish: () =
                         className="w-full bg-white border border-slate-200 rounded-[1.5rem] p-6 text-slate-700 focus:ring-4 focus:ring-logo-blue/10 focus:border-logo-blue focus:outline-none shadow-inner transition-all text-lg"
                         placeholder="Ditt svar..."
                         rows={3}
+                        value={reflectionAnswers[`${module.id}_${idx}`] || ''}
+                        onChange={(e) => onReflectionChange(`${module.id}_${idx}`, e.target.value)}
                       ></textarea>
                     </div>
                   ))}
@@ -804,10 +807,65 @@ const ModuleViewer: React.FC<{ module: Module, pathColor: string, onFinish: () =
   );
 };
 
-const LearningDashboard: React.FC = () => {
+const LearningDashboard: React.FC<{ userId: string }> = ({ userId }) => {
   const [selectedPathId, setSelectedPathId] = useState<string | null>(null);
   const [activeModuleId, setActiveModuleId] = useState<string | null>(null);
   const [completedModules, setCompletedModules] = useState<Set<string>>(new Set());
+  const [reflectionAnswers, setReflectionAnswers] = useState<Record<string, string>>({});
+  const [isLoading, setIsLoading] = useState(true);
+  const reflectionSaveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Load progress from Supabase on mount
+  useEffect(() => {
+    const loadProgress = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('user_progress')
+          .select('completed_modules, reflection_answers')
+          .eq('user_id', userId)
+          .single();
+
+        if (data && !error) {
+          setCompletedModules(new Set(data.completed_modules || []));
+          setReflectionAnswers(data.reflection_answers || {});
+        }
+      } catch (e) {
+        console.warn('Could not load progress:', e);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    loadProgress();
+  }, [userId]);
+
+  // Save progress to Supabase
+  const saveProgress = useCallback(async (modules: Set<string>, reflections: Record<string, string>) => {
+    try {
+      await supabase
+        .from('user_progress')
+        .upsert({
+          user_id: userId,
+          completed_modules: Array.from(modules),
+          reflection_answers: reflections,
+          updated_at: new Date().toISOString(),
+        }, { onConflict: 'user_id' });
+    } catch (e) {
+      console.warn('Could not save progress:', e);
+    }
+  }, [userId]);
+
+  // Handle reflection text changes with debounced save
+  const handleReflectionChange = useCallback((key: string, value: string) => {
+    setReflectionAnswers(prev => {
+      const next = { ...prev, [key]: value };
+      // Debounce: save after 1s of no typing
+      if (reflectionSaveTimer.current) clearTimeout(reflectionSaveTimer.current);
+      reflectionSaveTimer.current = setTimeout(() => {
+        saveProgress(completedModules, next);
+      }, 1000);
+      return next;
+    });
+  }, [completedModules, saveProgress]);
 
   // Beregn fremdrift for hver sti dynamisk
   const paths = useMemo(() => {
@@ -832,10 +890,23 @@ const LearningDashboard: React.FC = () => {
     setCompletedModules(prev => {
       const next = new Set(prev);
       next.add(moduleId);
+      // Save to Supabase immediately
+      saveProgress(next, reflectionAnswers);
       return next;
     });
     setActiveModuleId(null);
   };
+
+  if (isLoading) {
+    return (
+      <div className="py-24 flex items-center justify-center min-h-[60vh]">
+        <div className="flex flex-col items-center gap-4">
+          <div className="w-16 h-16 border-4 border-logo-blue border-t-transparent rounded-full animate-spin"></div>
+          <p className="text-slate-500 font-bold">Laster fremdriften din...</p>
+        </div>
+      </div>
+    );
+  }
 
   if (activeModule && selectedPath) {
     return (
@@ -845,6 +916,8 @@ const LearningDashboard: React.FC = () => {
           pathColor={selectedPath.color}
           onFinish={() => handleModuleFinish(activeModule.id)}
           onExit={handleModuleExit}
+          reflectionAnswers={reflectionAnswers}
+          onReflectionChange={handleReflectionChange}
         />
       </div>
     );

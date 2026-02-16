@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { supabase } from './supabase';
 import Navbar from './components/Navbar.tsx';
 import Hero from './components/Hero.tsx';
 import About from './components/About.tsx';
@@ -13,14 +14,19 @@ import PackagesPage from './components/PackagesPage.tsx';
 
 const App: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userId, setUserId] = useState<string | null>(null);
   const [view, setView] = useState<'home' | 'login' | 'about' | 'dashboard' | 'packages'>('home');
 
-  const handleLoginSuccess = () => {
+  const handleLoginSuccess = async () => {
+    const { data } = await supabase.auth.getUser();
+    setUserId(data.user?.id ?? null);
     setIsLoggedIn(true);
     setView('dashboard');
   };
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    setUserId(null);
     setIsLoggedIn(false);
     setView('home');
   };
@@ -75,7 +81,7 @@ const App: React.FC = () => {
           isLoggedIn={isLoggedIn}
         />
         <main className="flex-grow">
-          <LearningDashboard />
+          {userId && <LearningDashboard userId={userId} />}
         </main>
         <Footer />
       </div>
