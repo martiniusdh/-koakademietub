@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from './Logo.tsx';
-import aboutImageUrl from '../om-oss-bilde.png';
+import aboutImageUrl from '../logo.png';
 import jonasImageUrl from '../IMG-Jonas.JPG';
 import lucasImageUrl from '../IMG-Lucas.JPG';
 import martiniusImageUrl from '../IMG-Martinius.JPG';
