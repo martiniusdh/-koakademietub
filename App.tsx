@@ -179,7 +179,7 @@ const App: React.FC = () => {
         </section>
       </main>
 
-      <Footer />
+      <Footer onLegalClick={navigateToLegal} />
     </div>
   );
 };
