@@ -30,7 +30,7 @@ const Products: React.FC<ProductsProps> = ({ hasAccess, onUnlock }) => {
 
               <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-slate-600">
                 {[
-                  'Læring gjort enkelt',
+                  'Gratis tilgang',
                   'Læringssti: Sparing og renter',
                   'Læringssti: Investering og aksjer',
                   'Læringssti: Budsjett og pengebruk',
@@ -41,7 +41,7 @@ const Products: React.FC<ProductsProps> = ({ hasAccess, onUnlock }) => {
                     <svg className="h-6 w-5 flex-none text-logo-blue mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M16.704 4.176a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
                     </svg>
-                    <span className={feature === 'Læring gjort enkelt' ? 'font-bold text-logo-blue' : ''}>{feature}</span>
+                    <span className={feature === 'Gratis tilgang' ? 'font-bold text-logo-blue' : ''}>{feature}</span>
                   </li>
                 ))}
               </ul>

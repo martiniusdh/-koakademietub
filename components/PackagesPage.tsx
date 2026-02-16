@@ -46,7 +46,7 @@ const PackagesPage: React.FC<PackagesPageProps> = ({ onUnlock }) => {
 
               <div className="grid gap-6">
                 {[
-                  { title: 'Enkel læring', desc: 'Læring gjort enkelt' },
+                  { title: 'Gratis tilgang', desc: 'Gratis tilgang' },
                   { title: 'Interaktive Stier', desc: 'Gå gjennom moduler med quizer og realistiske scenarioer.' },
                   { title: 'Fremdriftsmåling', desc: 'Se nøyaktig hvor mye du har lært og hva som gjenstår.' }
                 ].map((item, i) => (
@@ -79,7 +79,7 @@ const PackagesPage: React.FC<PackagesPageProps> = ({ onUnlock }) => {
 
                     <ul role="list" className="mt-10 space-y-4 text-base leading-7 text-slate-600">
                       {[
-                        'Enkel læring',
+                        'Gratis tilgang',
                         'Læringssti: Sparing og renter',
                         'Læringssti: Investering og aksjer',
                         'Læringssti: Budsjett og pengebruk',
