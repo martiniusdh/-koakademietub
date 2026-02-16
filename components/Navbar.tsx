@@ -32,7 +32,7 @@ const Navbar: React.FC<NavbarProps> = ({
             <div className="w-14 h-14 flex items-center justify-center drop-shadow-sm transition-transform group-hover:scale-110 duration-300">
               <Logo />
             </div>
-            <span className="text-2xl font-black tracking-tighter text-slate-900">
+            <span className="text-base sm:text-lg md:text-2xl font-black tracking-tighter text-slate-900">
               Økonomiakademiet <span className="text-logo-blue">UB</span>
             </span>
           </div>

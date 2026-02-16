@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
           <div className="max-w-2xl lg:mx-0 lg:flex-auto">
             <div className="flex flex-col sm:flex-row gap-3 mb-8">
               <div className="inline-flex items-center space-x-2 rounded-full bg-slate-50 px-3 py-1 text-sm font-medium text-slate-700 ring-1 ring-inset ring-slate-700/10 w-fit">
-                <span>Prototype lanseres våren 2026</span>
+                <span>Helt Gratis</span>
               </div>
             </div>
             <h1 className="text-5xl font-extrabold tracking-tight text-slate-900 sm:text-7xl">
@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
             </p>
             <div className="mt-12 flex flex-wrap items-center gap-6">
               <a href="#produkter" className="rounded-xl bg-logo-blue px-8 py-4 text-lg font-bold text-white shadow-xl hover:bg-logo-blue-dark hover:-translate-y-1 transition-all duration-200">
-                Sikre deg tilgang
+                Sikre deg helt gratis tilgang
               </a>
               <a href="#om-oss" className="group text-lg font-bold leading-6 text-slate-900 flex items-center gap-2">
                 Les om vårt team <span className="group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span>
