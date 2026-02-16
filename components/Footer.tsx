@@ -1,7 +1,11 @@
 import React from 'react';
 import Logo from './Logo.tsx';
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  onLegalClick: (type: 'privacy' | 'terms') => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ onLegalClick }) => {
   return (
     <footer className="bg-slate-900">
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
@@ -24,8 +28,18 @@ const Footer: React.FC = () => {
             © 2026 Økonomiakademiet UB. Alle rettigheter reservert.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-slate-500 hover:text-white text-xs transition-colors">Personvern</a>
-            <a href="#" className="text-slate-500 hover:text-white text-xs transition-colors">Brukervilkår</a>
+            <button
+              onClick={() => onLegalClick('privacy')}
+              className="text-slate-500 hover:text-white text-xs transition-colors"
+            >
+              Personvern
+            </button>
+            <button
+              onClick={() => onLegalClick('terms')}
+              className="text-slate-500 hover:text-white text-xs transition-colors"
+            >
+              Brukervilkår
+            </button>
           </div>
         </div>
       </div>

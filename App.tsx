@@ -11,11 +11,12 @@ import LoginPage from './components/LoginPage.tsx';
 import AboutPage from './components/AboutPage.tsx';
 import LearningDashboard from './components/LearningDashboard.tsx';
 import PackagesPage from './components/PackagesPage.tsx';
+import LegalPages from './components/LegalPages.tsx';
 
 const App: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userId, setUserId] = useState<string | null>(null);
-  const [view, setView] = useState<'home' | 'login' | 'about' | 'dashboard' | 'packages'>('home');
+  const [view, setView] = useState<'home' | 'login' | 'about' | 'dashboard' | 'packages' | 'privacy' | 'terms'>('home');
 
   const handleLoginSuccess = async () => {
     const { data } = await supabase.auth.getUser();
@@ -51,6 +52,11 @@ const App: React.FC = () => {
     setView('packages');
   };
 
+  const navigateToLegal = (type: 'privacy' | 'terms') => {
+    window.scrollTo(0, 0);
+    setView(type);
+  };
+
   const handleContactClick = () => {
     if (view !== 'home') {
       setView('home');
@@ -68,6 +74,26 @@ const App: React.FC = () => {
     return <LoginPage onBack={() => setView('home')} onLoginSuccess={handleLoginSuccess} />;
   }
 
+  // Personvern og Brukervilkår
+  if (view === 'privacy' || view === 'terms') {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <Navbar
+          onLoginClick={isLoggedIn ? handleLogout : navigateToLogin}
+          onBrandClick={navigateToHome}
+          onAboutClick={navigateToAbout}
+          onContactClick={handleContactClick}
+          onPackagesClick={navigateToPackages}
+          isLoggedIn={isLoggedIn}
+        />
+        <main className="flex-grow">
+          <LegalPages type={view} onBack={() => setView('home')} />
+        </main>
+        <Footer onLegalClick={navigateToLegal} />
+      </div>
+    );
+  }
+
   // Dashboard vises kun hvis man er logget inn
   if (view === 'dashboard' && isLoggedIn) {
     return (
@@ -83,7 +109,7 @@ const App: React.FC = () => {
         <main className="flex-grow">
           {userId && <LearningDashboard userId={userId} />}
         </main>
-        <Footer />
+        <Footer onLegalClick={navigateToLegal} />
       </div>
     );
   }
@@ -103,7 +129,7 @@ const App: React.FC = () => {
         <main className="flex-grow">
           <PackagesPage onUnlock={navigateToLogin} />
         </main>
-        <Footer />
+        <Footer onLegalClick={navigateToLegal} />
       </div>
     );
   }
@@ -123,7 +149,7 @@ const App: React.FC = () => {
         <main className="flex-grow">
           <AboutPage onRegisterClick={navigateToLogin} />
         </main>
-        <Footer />
+        <Footer onLegalClick={navigateToLegal} />
       </div>
     );
   }
