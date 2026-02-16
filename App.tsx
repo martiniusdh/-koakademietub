@@ -141,7 +141,7 @@ const App: React.FC = () => {
       />
 
       <main className="flex-grow">
-        <Hero />
+        <Hero onAboutClick={navigateToAbout} />
         <section id="produkter">
           <Products hasAccess={false} onUnlock={navigateToLogin} />
         </section>

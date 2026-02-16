@@ -3,7 +3,11 @@ import React from 'react';
 import Logo from './Logo.tsx';
 import forsideBilde from '../forside-bilde.png'
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  onAboutClick: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onAboutClick }) => {
   return (
     <div className="relative overflow-hidden bg-white pt-16 pb-24 sm:pt-24 sm:pb-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -24,9 +28,12 @@ const Hero: React.FC = () => {
               <a href="#produkter" className="rounded-xl bg-logo-blue px-8 py-4 text-lg font-bold text-white shadow-xl hover:bg-logo-blue-dark hover:-translate-y-1 transition-all duration-200">
                 Sikre deg helt gratis tilgang
               </a>
-              <a href="#om-oss" className="group text-lg font-bold leading-6 text-slate-900 flex items-center gap-2">
+              <button
+                onClick={onAboutClick}
+                className="group text-lg font-bold leading-6 text-slate-900 flex items-center gap-2 hover:text-logo-blue transition-colors"
+              >
                 Les om vårt team <span className="group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span>
-              </a>
+              </button>
             </div>
           </div>
           <div className="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow flex justify-center">
