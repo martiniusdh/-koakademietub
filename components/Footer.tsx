@@ -19,7 +19,15 @@ const Footer: React.FC = () => {
             <p>Skoleåret 2025/2026</p>
           </div>
         </div>
-
+        <div className="mt-8 border-t border-slate-800 pt-8 flex flex-col items-center justify-between gap-4 md:flex-row">
+          <p className="text-slate-500 text-xs">
+            © 2024 Økonomiakademiet UB. Alle rettigheter reservert.
+          </p>
+          <div className="flex gap-6">
+            <a href="#" className="text-slate-500 hover:text-white text-xs transition-colors">Personvern</a>
+            <a href="#" className="text-slate-500 hover:text-white text-xs transition-colors">Brukervilkår</a>
+          </div>
+        </div>
       </div>
     </footer>
   );
