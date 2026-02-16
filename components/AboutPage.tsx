@@ -1,6 +1,9 @@
 import React from 'react';
 import Logo from './Logo.tsx';
 import aboutImageUrl from '../om-oss-bilde.png';
+import jonasImageUrl from '../IMG-Jonas.JPG';
+import lucasImageUrl from '../IMG-Lucas.JPG';
+import martiniusImageUrl from '../IMG-Martinius.JPG';
 
 interface AboutPageProps {
   onRegisterClick: () => void;
@@ -8,19 +11,22 @@ interface AboutPageProps {
 
 const TEAM = [
   {
-    name: 'Lucas Nevermo Steiro',
-    role: 'Daglig Leder',
-    bio: 'Lucas leder strategien og sørger for at våre pedagogiske mål nås med høyeste kvalitet.'
+    name: 'Jonas Hole Sletten',
+    role: 'Produkt- og markedsansvarlig',
+    bio: 'Jonas utvikler våre interaktive læringsstier og leder vår digitale tilstedeværelse.',
+    image: jonasImageUrl,
   },
   {
     name: 'Martinius Dimmen-Hansen',
     role: 'Økonomi- og HR-ansvarlig',
-    bio: 'Martinius har ansvaret for bedriftens økonomiske bærekraft og teamets trivsel.'
+    bio: 'Martinius har ansvaret for bedriftens økonomiske bærekraft og teamets trivsel.',
+    image: martiniusImageUrl,
   },
   {
-    name: 'Jonas Hole Sletten',
-    role: 'Produkt- og markedsansvarlig',
-    bio: 'Jonas utvikler våre interaktive læringsstier og leder vår digitale tilstedeværelse.'
+    name: 'Lucas Nevermo Steiro',
+    role: 'Daglig Leder',
+    bio: 'Lucas leder strategien og sørger for at våre pedagogiske mål nås med høyeste kvalitet.',
+    image: lucasImageUrl,
   },
 ];
 
@@ -113,12 +119,12 @@ const AboutPage: React.FC<AboutPageProps> = ({ onRegisterClick }) => {
             {TEAM.map((person) => (
               <li key={person.name} className="flex flex-col items-center">
                 <div className="relative w-full aspect-square rounded-3xl bg-white shadow-xl overflow-hidden mb-8 border border-slate-100 group">
-                  <div className="absolute inset-0 bg-slate-900/5 transition-opacity group-hover:opacity-0"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-24 h-24 text-slate-200">
-                      <Logo />
-                    </div>
-                  </div>
+                  <img
+                    src={person.image}
+                    alt={person.name}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 to-transparent transition-opacity group-hover:opacity-0"></div>
                 </div>
                 <h3 className="text-xl font-bold leading-7 tracking-tight text-slate-900">{person.name}</h3>
                 <p className="text-sm font-semibold leading-6 text-logo-blue uppercase tracking-widest mt-1">{person.role}</p>
