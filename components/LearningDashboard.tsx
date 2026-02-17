@@ -927,9 +927,19 @@ const LearningDashboard: React.FC<{ userId: string }> = ({ userId }) => {
     <div className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto min-h-[60vh]">
       {!selectedPath ? (
         <>
-          <header className="mb-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <h1 className="text-4xl font-black text-slate-900 sm:text-5xl tracking-tight">Velkommen til ditt akademi</h1>
-            <p className="mt-4 text-xl text-slate-600 font-medium">Velg en læringssti for å starte din reise mot økonomisk kunnskap.</p>
+          <header className="mb-12 animate-in fade-in slide-in-from-bottom-4 duration-500 flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div>
+              <h1 className="text-4xl font-black text-slate-900 sm:text-5xl tracking-tight">Velkommen til ditt akademi</h1>
+              <p className="mt-4 text-xl text-slate-600 font-medium">Velg en læringssti for å starte din reise mot økonomisk kunnskap.</p>
+            </div>
+            <div className="bg-logo-blue/5 border-2 border-logo-blue/10 px-6 py-4 rounded-[2rem] flex items-center gap-4 shrink-0 shadow-sm h-fit">
+              <div className="w-10 h-10 bg-logo-blue rounded-2xl flex items-center justify-center text-white shadow-lg shadow-logo-blue/20">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" y1="16" x2="12" y2="12" /><line x1="12" y1="8" x2="12.01" y2="8" /></svg>
+              </div>
+              <span className="text-xs font-black text-slate-900 uppercase tracking-[0.1em] leading-tight max-w-[150px]">
+                OBS! Dette er ikke finansiell rådgiving!
+              </span>
+            </div>
           </header>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
